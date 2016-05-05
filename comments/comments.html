@@ -5,11 +5,11 @@
         <a class="button" ng-href="{{news.link}}">lire l'article</a>
         <form ng-submit="submit()">
             <h3>Ajouter un commentaire</h3>
-            <div class="commentaire">
+            <div class="commentaire colComment">
                 <span>Commentaires</span>
                 <textarea ng-class="body" ng-model="comment.body" required="true"></textarea>
             </div>
-            <div class="author">
+            <div class="colComment">
                 <span>Auteur</span>
                 <input class="input" type="text" ng-model="comment.author" ng-class="author" required="true">
                 <input class="button" type="submit" value="post">
