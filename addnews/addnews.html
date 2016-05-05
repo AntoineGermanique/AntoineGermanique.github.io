@@ -1,0 +1,13 @@
+<h2 class="multiline"><span>Nouvelle</span> News</h2>
+<div ng-controller="addnewsCtrl" >
+    <form class="addnews" name="mForm" ng-submit="submit()">
+        <label>Titre
+            <input class="input" type="text" ng-model="post.title" ng-class="title" required="true">
+        </label>
+        <label>Url
+            <input class="input" type="url" ng-model="post.link" ng-class="link" required="true">
+        </label>
+        <span class="error" ng-show="myForm.input.$error.url">Not valid url!</span>
+        <input class="button" type="submit" value="post">
+    </form>
+</div>

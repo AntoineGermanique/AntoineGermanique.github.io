@@ -1,0 +1,35 @@
+<h2>comments</h2>
+<div ng-controller="commentsCtrl" >
+    <div class="editionCommentaire">
+        <span class="post-title">{{news.title}}</span>
+        <a class="button" ng-href="{{news.link}}">lire l'article</a>
+        <form ng-submit="submit()">
+            <h3>Ajouter un commentaire</h3>
+            <div class="commentaire">
+                <span>Commentaires</span>
+                <textarea ng-class="body" ng-model="comment.body" required="true"></textarea>
+            </div>
+            <div class="author">
+                <span>Auteur</span>
+                <input class="input" type="text" ng-model="comment.author" ng-class="author" required="true">
+                <input class="button" type="submit" value="post">
+            </div>
+        </form>
+    </div>
+    <div class="commentTitle">
+        <span class="commentBody">
+            Commentaires
+        </span>
+        <span class="commentAuteur">
+            Auteurs
+        </span>
+    </div>
+        <span ng-if="commentsCollection.length===0">aucun commentaire</span>
+
+    <div ng-repeat="comment in commentsCollection">
+        <div class="comment">
+            <span class="commentBody">{{comment.body}}</span>
+            <span class="commentAuteur">{{comment.author}}</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+
+<div ng-controller="newsCtrl">
+    <h2 ng-class="title">News</h2>
+    <div ng-if="!isQuerySuccess">Chargement en Cours...</div>
+    <div ng-if="isQueryError">Une erreur est survenue...</div>
+    <div class="news {{randomColor()}}" ng-init="initRand()" ng-repeat="news in newsCollection">
+        <span class="post-title"> {{news.title}}</span>
+        <a class="button" ng-href="{{news.link}}">Lire l'article</a>
+        <div class="containerVoteCom">
+            <a class="button comments" ng-href="index.html#/comments/{{news._id}}"> comments : {{news.comments.length}} </a>
+            <div class="upvote">
+                <span class="upvoteText"> upvote : {{news.upvotes}} </span>
+                <span class="button upvoteBtn"  ng-click="upVote()">+</span>
+            </div>
+        </div>
+    </div>
+<div>
