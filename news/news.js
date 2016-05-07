@@ -5,7 +5,7 @@ angular.module('myApp.news', ['ngRoute','ngResource','newsAdenomServices'])
 
 
 .controller('newsCtrl', function($scope,$resource,Vote) {
-        var News=$resource("http://adneom.herokuapp.com/api/posts");
+        var News=$resource("https://agile-brook-75395.herokuapp.com/api/posts");
         $scope.isQuerySuccess=false;
         $scope.isQueryFalse=false;
         News.query().$promise.then(function(res){
